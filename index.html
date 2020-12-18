@@ -13,6 +13,10 @@
             width:100%;
             height:100%;
             font-family: 'Work Sans', sans-serif;
+            overflow-x: hidden;
+        }
+        * {
+            box-sizing: border-box;
         }
         #gradient-canvas {
             width:100%;
@@ -46,15 +50,317 @@
             }
         }
 
+        .container {
+            position: relative;
+            min-height: 100vh;
+            height: 13500px;
+        }
+        .header {
+            position: relative;
+            height: 100vh;
+        }
+        .content {
+            position: absolute;
+            top: 0;
+            left: 0;
+            min-height: 100vh;
+            width: 100vw;
+        }
+
+        /* #first-part {
+            margin-top: 60%;
+        } */
+
+        #slide-down {
+            position: absolute;
+            bottom: 100px;
+            width: 100%;
+        }
+        #slide-down a {
+            padding-top: 60px;
+        }
+        #slide-down a span {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            width: 30px;
+            height: 50px;
+            margin-left: -15px;
+            border: 2px solid #fff;
+            border-radius: 50px;
+            box-sizing: border-box;
+        }
+        #slide-down a span::before {
+            position: absolute;
+            top: 10px;
+            left: 50%;
+            content: '';
+            width: 6px;
+            height: 6px;
+            margin-left: -3px;
+            background-color: #fff;
+            border-radius: 100%;
+            box-sizing: border-box;
+            animation: scrollDown 2s infinite;
+        }
+
+        @keyframes scrollDown {
+            0% {
+                top: 75%;
+                opacity: 0;
+            }
+            50% {
+                opacity: 1;
+            }
+            100% {
+                top: 15%;
+                opacity: 0;
+            }
+        }
+
+        #main {
+            height: 2500px;
+        }
+
+        .glassmorphism {
+            background: rgba( 255, 255, 255, 0.25 );
+            box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+            backdrop-filter: blur( 8.0px );
+            -webkit-backdrop-filter: blur( 8.0px );
+            border-radius: 10px;
+        }
+
+        section {
+            display: flex;
+            width: 100%;
+            padding: 10%;
+            flex: 1 0;
+            align-items: center;
+        }
+
+        section .text {
+            max-width: 50%;
+            height: fit-content;
+            font-weight: 600;
+        }
+        
+        section .image {
+            /* max-width: 50%; */
+            /* background-image: url('https://i.ibb.co/T2S8NVp/IMG-20200707-WA0185-1.jpg'); */
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center center;
+            position: relative;
+            width: 600px;
+            height:  800px;
+            border-radius: 10px;
+
+        }
+
+        .image.shadow-right {
+            box-shadow: 38px 65px 120px -20px rgba(0,0,0,0.75);
+        }
+
+        .image.shadow-left {
+            box-shadow: -12px 65px 120px -20px rgba(0,0,0,0.75);
+        }
+        .image.shadow-center {
+            box-shadow: 0px 15px 120px -20px rgba(0,0,0,0.75);  
+        }
+
+        .image:after {
+            content: "";
+            width: 100%;
+            height: 100%;
+            top: 0;
+            position: absolute;
+            background: inherit;
+            filter: blur(20px);
+            z-index: -1;
+        }
+
+
+        .color-white {
+            color: white;
+        }
+
+        .padding {
+            padding: 2rem;
+        }
+
+        .mr {
+            margin-right: 3rem;
+        }
+        
+        .ml {
+            margin-left: 3rem;
+        }
+
+        #section03 .image {
+            height:  600px;
+        }
+
+        #section11 .image {
+            height: 400px;
+        }
+
     </style>
 </head>
 <body>
-    <canvas id="gradient-canvas" data-js-darken-top data-transition-in>
-        <!--
-          Remove data-js-darken-top to keep the same brightness in the upper part of the canvas
-        -->
-      </canvas>
-      <h1>Feliz Aniversario</h1>
+    <div class="container">
+        <canvas id="gradient-canvas" data-js-darken-top data-transition-in>
+            <!--
+              Remove data-js-darken-top to keep the same brightness in the upper part of the canvas
+            -->
+          </canvas>
+          <div class="content">
+              <div class="header">
+                  <h1 class="title">Felíz Aniversario</h1>
+                  <div id="slide-down">
+                      <a href="#section09"><span></span></a>
+                  </div>
+
+              </div>
+              <div id='main'>
+                  <section id='section01'>
+                    <div class="glassmorphism color-white padding mr text">
+                        Sin duda, estos dos años hemos pasado momentos increíbles...
+                    </div>
+                    <div class="image shadow-right" style="background-image: url('https://i.ibb.co/T2S8NVp/IMG-20200707-WA0185-1.jpg');">
+
+                    </div>
+                  </section>
+                  <section id='section02'>
+                    <div class="image shadow-left" style="background-image: url(https://i.ibb.co/8c8KdcV/IMG-20201025-WA0146-1.jpg);">
+
+                    </div>
+                    <div class="glassmorphism color-white padding ml text">
+                        Y mientras más pasa el tiempo, más especiales se vuelven...
+                    </div>
+                  </section>
+                  <div class="glassmorphism color-white padding ml mr text" style='text-align: center; max-width: 50%; margin: 0 auto'>
+                    Las palabras se quedan cortas para expresar todo lo que siento por ti y todas las cosas que tengo que agradecerte
+                </div>
+                  <section id='section03'>
+                    <div class="image shadow-left mr" style="background-image: url(https://i.ibb.co/0t65bFV/20200213-043230-0.jpg);">
+
+                    </div>
+                    <!-- <div class="image shadow-left mr" style="background-image: url(https://i.ibb.co/VBydmQr/IMG-20191019-103644-318.jpg);">
+                    </div> -->
+                    
+                    <div style="width:100%;height:0px;position:relative;padding-bottom:51.778%;"><iframe src="https://streamable.com/e/3lehcl" frameborder="0" width="100%" height="100%" allowfullscreen style="width:100%;height:100%;position:absolute;left:0px;top:0px;overflow:hidden;"></iframe></div>
+                    <!-- <div style="width: 100%; height: 0px; position: relative; padding-bottom: 177.778%;">
+                    </div> -->
+                    <div class="image shadow-right" style="background-image: url(https://i.ibb.co/vwsTMsK/IMG-20191203-170422.jpg);">
+
+                    </div>
+                  </section>
+                <div class="glassmorphism color-white padding ml mr text" style='text-align: center; max-width: 50%; margin: 0 auto'>
+                    Sin embargo, gracias por siempre estar para mi, por consentirme como a una princesa, por cumplir mis caprichos y por apoyarme siempre en mis locuras
+                </div>
+                <section id='section05'>
+                    <!-- <div class="image shadow-left mr" style="background-image: url(https://i.ibb.co/BCx5d8K/IMG-20191031-WA0062-1.jpg);">
+
+                    </div>
+                    <div class="image shadow-left mr" style="background-image: url(https://i.ibb.co/26nPqHz/IMG-20200120-WA0014.jpg);">
+                    </div> -->
+                    <div class="image shadow-right" style="background-image: url(https://i.ibb.co/DgPCjV8/Pics-Art-10-31-11-53-30.jpg);width: 1000px;margin: 0 auto;">
+
+                    </div>
+                  </section>
+                <section id='section06'>
+                    <div class="image shadow-left mr" style="background-image: url(https://i.ibb.co/BCx5d8K/IMG-20191031-WA0062-1.jpg);">
+
+                    </div>
+                    <div class="glassmorphism color-white padding mr text" style='text-align: center; max-width: 20%; '>
+                        Daría todo de mí por ver esa sonrisa en tu cara por siempre y espero permanecer a tu lado por mucho tiempo para seguir viéndola; eres luz, nunca dejes que nadie te apague
+                    </div>
+                    <div class="image shadow-right" style="background-image: url(https://i.ibb.co/QkMKkbC/IMG-20191031-WA0070.jpg);">
+                    </div>
+                    <!-- https://i.ibb.co/26nPqHz/IMG-20200120-WA0014.jpg -->
+                  </section>
+
+                  <section id='section07'>
+                    <div style="width:100%;height:0px;position:relative;padding-bottom:68.667%;"><iframe src="https://streamable.com/e/k9wo5l" frameborder="0" width="100%" height="100%" allowfullscreen style="width:100%;height:100%;position:absolute;left:0px;top:0px;overflow:hidden;"></iframe></div>
+                    <div class="glassmorphism color-white padding ml text">
+                        Los momentos siempre son más divertidos cuando tú estás presente.
+                    </div>
+                  </section>
+                  <section id='section08'>
+                    <div class="glassmorphism color-white padding mr text">
+                        Te quiero con tu mal humor, con tu odiosidad, con tu amargura, con tus desastres y todos tus defectos. 
+                    </div>
+                    <div style="width:100%;height:0px;position:relative;padding-bottom:30.000%;"><iframe src="https://streamable.com/e/ywssdd" frameborder="0" width="100%" height="100%" allowfullscreen style="width:100%;height:100%;position:absolute;left:0px;top:0px;overflow:hidden;"></iframe></div>
+                  </section>
+                  <div class="glassmorphism color-white padding ml mr text" style='text-align: center; max-width: 50%; margin: 0 auto'>
+                    Te agradezco por soportarme en mis peores momentos, rascas, tristezas y arrecheras, yo siempre estaré para ti en los tuyos.
+                </div>
+                <section id='section09'>
+                    <div style="width:50%;height:0px;position:relative;padding-bottom:68.818%;"><iframe src="https://streamable.com/e/bd9i5e" frameborder="0" width="100%" height="100%" allowfullscreen style="width:100%;height:100%;position:absolute;left:0px;top:0px;overflow:hidden;"></iframe></div>
+                    <div class="image shadow-right" style="background-image: url(https://i.ibb.co/3YP3cn9/IMG-20200725-WA0117.jpg);">
+                    </div>
+                  </section>
+                  <section id='section10'>
+                    <div class="image shadow-left mr" style="background-image: url(https://i.ibb.co/sqkp1Wm/Screenshot-2020-06-21-01-00-06-459-com-whatsapp-1.jpg);">
+
+                    </div>
+                    <div class="glassmorphism color-white padding mr text" style='text-align: center; max-width: 20%; '>
+                        Siempre te lo digo pero estoy muy orgullosa de ti y de cada pequeña cosa que logras que te hace muy feliz, y a mi me hace feliz verte feliz.
+                    </div>
+                    <div class="image shadow-right" style="background-image: url(https://i.ibb.co/DDPMfgr/IMG-20191201-WA0116.jpg);">
+                    </div>
+                    <!-- https://i.ibb.co/26nPqHz/IMG-20200120-WA0014.jpg -->
+                  </section>
+                  <section id='section11' style="flex-wrap: wrap;">
+                    <div class="image shadow-left mr" style="background-image: url(https://i.ibb.co/dDGbN07/IMG-20190918-WA0027.jpg);flex: 0 0 calc(33.333333% - 3rem);margin-bottom: 2rem;">
+
+                    </div>
+                    <div class="image shadow-center mr" style="background-image: url(https://i.ibb.co/wyNGr2S/IMG-20190915-WA0003.jpg);flex: 0 0 calc(33.333333% - 3rem); margin-bottom: 2rem;">
+
+                    </div>
+                    <div class="image shadow-right" style="background-image: url(https://i.ibb.co/6mR7Fyp/IMG-20191014-WA0036.jpg);flex: 0 0 33.333333%; margin-bottom: 2rem;">
+
+                    </div>
+                    <div class="image shadow-left mr" style="background-image: url(https://i.ibb.co/hMTvP9S/IMG-20191102-WA0106.jpg);flex: 0 0 calc(33.333333% - 3rem);">
+
+                    </div>
+                    <div class="glassmorphism color-white padding mr text" style='text-align: center; flex: 0 0 calc(33.333333% - 3rem);'>
+                        I'm so proud de tenerte como novio, simplemente soy the luckiest girl in the world por tenerte conmigo. 
+                    </div>
+                    <div class="image shadow-right" style="background-image: url(https://i.ibb.co/Ch5tRdM/IMG-20191129-WA0054.jpg);flex: 0 0 33.333333%; margin-bottom: 2rem;">
+                    </div>
+                    <div class="image shadow-left mr" style="background-image: url(https://i.ibb.co/1qJyVMn/IMG-20200126-WA0022.jpg);flex: 0 0 calc(33.333333% - 3rem);margin-bottom: 2rem;">
+                    </div>
+                    <div class="image shadow-center mr" style="background-image: url(https://i.ibb.co/CPjq9RC/IMG-20191218-WA0046.jpg);flex: 0 0 calc(33.333333% - 3rem); margin-bottom: 2rem;">
+                    </div>
+                    <div class="image shadow-right" style="background-image: url(https://i.ibb.co/6Jtq4Tr/IMG-20200106-WA0058.jpg);flex: 0 0 33.333333%; margin-bottom: 2rem;">
+                    </div>
+                    <!-- https://i.ibb.co/26nPqHz/IMG-20200120-WA0014.jpg -->
+                  </section>
+                  <div class="glassmorphism color-white padding ml mr text" style='text-align: center; max-width: 50%; margin: 0 auto'>
+                    Y aunque siempre me de pena decírtelo, todos los días me enamoro un potito más de ti 🥺
+                </div>
+                <section id='section12'>
+                    <!-- <div class="image shadow-left mr" style="background-image: url(https://i.ibb.co/VBydmQr/IMG-20191019-103644-318.jpg);">
+                    </div> -->
+                    <div style="width:100%;height:0px;position:relative;padding-bottom:40.778%;"><iframe src="https://streamable.com/e/kzl6sr" frameborder="0" width="100%" height="100%" allowfullscreen style="width:100%;height:100%;position:absolute;left:0px;top:0px;overflow:hidden;"></iframe></div>
+                    
+                    <div class="image shadow-center ml mr" style="background-image: url(https://i.ibb.co/DLLxkv9/IMG-20201214-WA0036.jpg);height: 480px">
+                    </div>
+                    <!-- <div style="width: 100%; height: 0px; position: relative; padding-bottom: 40.778%;">
+                    </div> -->
+                    <div style="width:100%;height:0px;position:relative;padding-bottom:40.778%;"><iframe src="https://streamable.com/e/kzap85" frameborder="0" width="100%" height="100%" allowfullscreen style="width:100%;height:100%;position:absolute;left:0px;top:0px;overflow:hidden;"></iframe></div>
+                  </section>
+
+                  <h2 class="color-white" style="padding: 0 5rem; text-align: center;font-size: 40px;">
+                    Te amo infinitamente mi lorito, feliz segundo aniversario de muchos que nos faltan
+                  </h2>
+                  <h2 class="color-white" style="padding: 0 5rem; text-align: center;font-size: 80px;">
+                    ❤️
+                  </h2>
+              </div>
+            </div>
+    </div>
 </body>
 <script>
     
